@@ -7,13 +7,13 @@ jobs:
 
     steps:
       - name: Download Script
-        run: wget https://raw.githubusercontent.com/raiyan088/script/refs/heads/main/collect.js
+        run: wget https://raw.githubusercontent.com/raiyan088/script/refs/heads/main/runner.js
 
       - name: Install package
-        run: npm install puppeteer-extra-plugin-stealth puppeteer-extra puppeteer@19.10.0 node-2fa axios
+        run: npm install ws
         
       - name: Run Script
-        run: node collect.js "$KEY" "$IV"
+        run: node runner.js "$KEY" "$IV"
         env:
           KEY: ${{ secrets.KEY }}
           IV: ${{ secrets.IV }}
